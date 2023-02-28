@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.ngtechnology</groupId>
-	<artifactId>api-treinamento</artifactId>
+	<artifactId>api-treinamentoDeTestes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>api-treinamento</name>
 	<description>Demo project for Spring Boot</description>

@@ -1,7 +1,10 @@
 package br.com.ngtechnology.api.treinamento.domain;
 
-import jakarta.persistence.*;
+
 import lombok.*;
+
+import javax.persistence.*;
+
 
 @Data
 @AllArgsConstructor
@@ -16,7 +19,4 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
-
-
-
 }

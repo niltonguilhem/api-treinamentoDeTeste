@@ -1,9 +1,11 @@
 package br.com.ngtechnology.api.treinamento.services.impl;
 
 import br.com.ngtechnology.api.treinamento.domain.User;
+import br.com.ngtechnology.api.treinamento.domain.dto.UserDTO;
 import br.com.ngtechnology.api.treinamento.repositories.UserRepository;
 import br.com.ngtechnology.api.treinamento.services.UserService;
 import br.com.ngtechnology.api.treinamento.services.exceptions.ObjectNotFoundException;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,10 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository repository;
+
+    @Autowired
+    private ModelMapper mapper;
+
     @Override
     public User findById(Integer id) {
         Optional<User> obj = repository.findById(id);
@@ -23,5 +29,10 @@ public class UserServiceImpl implements UserService {
 
     public List<User> findAll(){
         return repository.findAll();
+    }
+
+    @Override
+    public User create(UserDTO obj) {
+        return repository.save(mapper.map(obj, User.class));
     }
 }

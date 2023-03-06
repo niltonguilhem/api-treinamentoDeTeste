@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class ApiTreinamentoApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void main() {
+		ApiTreinamentoApplication.main(new String[]{});
 	}
 
 }
